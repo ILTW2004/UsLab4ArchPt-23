@@ -7,10 +7,10 @@ class Program
     static void ChangeFileTimes(string directory, List<string> filePatterns, string newDate)
     {
         int totalFileCount = 0;
-        foreach (string filePattern in filePatterns)
+        foreach (string filePattern in filePatterns) //Створюємо масив типів файлів, які хочимо змінювати
         {
             int fileCount = 0;
-            foreach (string file in Directory.GetFiles(directory, filePattern, SearchOption.AllDirectories))
+            foreach (string file in Directory.GetFiles(directory, filePattern, SearchOption.AllDirectories)) //Змінюємо всі файли, час їх створення. Directoty - Папка, яку ми вводимо, у ній і будемо змінюємо 
             {
                 if (Path.GetFileName(file).StartsWith(".")) continue;
                 Console.WriteLine($"Changing date and time of file {file}");
